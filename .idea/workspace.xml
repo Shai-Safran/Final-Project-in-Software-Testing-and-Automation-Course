@@ -5,26 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="619e73b2-096c-4c06-b9e4-07be80a00439" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/automationexercise_web_project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FULL_RUN_COMMAND_TERMINAL.TXT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/run_2025-11-03_20-01-27.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/run_20251103_200126.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/test_report_20251103_200126.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_tests.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_tests.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_tests2.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_homepage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_navigation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_testcases_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_login-signup_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_navigation_to_test_cases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FULL_RUN_COMMAND_TERMINAL.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/FULL_RUN_COMMAND_TERMINAL.TXT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/framework/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_homepage.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_homepage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_navigation.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,18 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Shai-Safran"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Shai-Safran&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Shai-Safran/automationexercise_web_project.git",
-    "accountId": "c8c0c2aa-beea-4beb-8a55-1d8d1dcb2412"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Shai-Safran/automationexercise_web_project.git&quot;,
+    &quot;accountId&quot;: &quot;c8c0c2aa-beea-4beb-8a55-1d8d1dcb2412&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -69,8 +56,11 @@
     "Batch.run_tests.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python tests.Python tests in test_homepage.py.executor": "Run",
+    "Python tests.Python tests in test_login-signup_page.py.executor": "Run",
+    "Python tests.Python tests in test_navigation.py.executor": "Run",
     "Python.Run All Tests with HTML & Log.executor": "Debug",
     "Python.conftest.executor": "Run",
+    "Python.logger.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -84,7 +74,7 @@
       <recent name="C:\Users\Owner\PycharmProjects\automationexercise_web_project\framework" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Run All Tests with HTML &amp; Log">
+  <component name="RunManager">
     <configuration name="run_tests" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="automationexercise_web_project" />
       <option name="INTERPRETER_OPTIONS" value="" />

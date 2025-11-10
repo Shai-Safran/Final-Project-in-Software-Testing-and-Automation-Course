@@ -1,4 +1,4 @@
 # 1. יצירת חותמת זמן נקייה ואחסונה במשתנה TS
 $TS = Get-Date -Format "yyyyMMdd_HHmmss";
 # 2. הרצת Pytest, יצירת HTML ושימוש ב-Tee-Object לשמירת קובץ לוג גולמי
-python -m pytest --html "reports/test_report_$TS.html" --self-contained-html | Tee-Object "logs/run_$TS.log"
+python -m pytest --html "reports/test_report_$TS.html" --self-contained-html | Tee-Object "logs/run_$TS_raw.log"

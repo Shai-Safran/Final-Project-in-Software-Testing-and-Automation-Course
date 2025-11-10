@@ -9,7 +9,7 @@ init(autoreset=True)
 os.makedirs("logs", exist_ok=True)
 
 # הגדרת קובץ לוג עם תאריך ושעה
-log_file = f"logs/run_{time.strftime('%Y-%m-%d_%H-%M-%S')}.log"
+log_file = f"logs/run_{time.strftime("%Y%m%d-%H-%M-%S")}.log"
 
 # הגדרה בסיסית של logging
 logging.basicConfig(
