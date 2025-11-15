@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="619e73b2-096c-4c06-b9e4-07be80a00439" name="Changes" comment="עדכונים ושינוי שמות">
-      <change afterPath="$PROJECT_DIR$/framework/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_products_selecting_and_adding_to_cart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/actions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/framework/logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/logger_old.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_homepage.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_homepage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_login-signup_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_login-signup_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_navigation_to_test_cases.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_navigation_to_test_cases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_products_selecting_and_adding_to_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_products_selecting_and_adding_to_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_testcases_page.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,31 +59,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Batch.run_tests.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "PowerShell.run_tests.ps1.executor": "Run",
-    "Python tests.Python tests in test_homepage.py.executor": "Run",
-    "Python tests.Python tests in test_login-signup_page.py.executor": "Run",
-    "Python tests.Python tests in test_navigation.py.executor": "Run",
-    "Python tests.Python tests in test_navigation_to_test_cases.py.executor": "Run",
-    "Python tests.Python tests in test_products_selecting_and_adding_to_cart.py.executor": "Run",
-    "Python tests.Python tests in test_testcases_page.py.executor": "Run",
-    "Python.Run All Tests with HTML & Log.executor": "Debug",
-    "Python.conftest.executor": "Run",
-    "Python.helpers.executor": "Run",
-    "Python.logger.executor": "Run",
-    "Python.utils.executor": "Run",
-    "Python.אאאאאאא.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHELLCHECK.PATH": "C:\\Users\\Owner\\AppData\\Roaming\\JetBrains\\PyCharm2025.2\\plugins\\Shell Script\\shellcheck.exe",
-    "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Colors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Batch.run_tests.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;PowerShell.run_tests.ps1.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_homepage.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_login-signup_page.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_navigation.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_navigation_to_test_cases.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_products_selecting_and_adding_to_cart.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_testcases_page.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.File_Merging.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Run All Tests with HTML &amp; Log.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.conftest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.helpers.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logger.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;Python.אאאאאאא.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;C:\\Users\\Owner\\AppData\\Roaming\\JetBrains\\PyCharm2025.2\\plugins\\Shell Script\\shellcheck.exe&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Owner\PycharmProjects\automationexercise_web_project\framework" />
@@ -147,7 +153,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1762803492866</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎-00004" summary="עדכונים ושינוי שמות">
+      <option name="closed" value="true" />
+      <created>1762976455381</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1762976455381</updated>
+    </task>
+    <task id="LOCAL‎-00005" summary="עדכונים ושינוי שמות">
+      <option name="closed" value="true" />
+      <created>1762976951606</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1762976951606</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -1,47 +1,28 @@
+# --- התחלה של קובץ: tests/test_navigation_to_test_cases.py ---
+
 import logging
 import time
 from colorama import Fore, Style, init
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 from framework.logger import log_info, log_success, log_error, log_warning, log_test_start, log_test_end
+import pytest
 
 init(autoreset=True)
 
 
-def test_navigate_to_test_cases(headless=True):
+def test_navigate_to_test_cases(driver):
     """בדיקה של ניווט לכפתור Test Cases והפעלת כל מקרי הבדיקה"""
     test_name = "בדיקת ניווט לכפתור Test Cases"
     log_test_start(test_name)
 
-    # --- הגדרת Chrome Options ל-headless ---
-    chrome_options = Options()
-    if headless:
-        chrome_options.add_argument("--headless")  # שימוש ב-headless רגיל
-    chrome_options.add_argument("--disable-gpu")
-    chrome_options.add_argument("--window-size=1920,1080")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--disable-extensions")
-    chrome_options.add_argument("--disable-software-rasterizer")
-    chrome_options.add_argument("--remote-debugging-port=9222")
-
     outcome = "passed"
+    total_cases = 0
+    cases_with_content = 0
+    cases_with_instructions = 0
 
     try:
-        driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager().install()),
-            options=chrome_options
-        )
-
-        # רק אם לא headless
-        if not headless:
-            driver.maximize_window()
-
         url = "https://automationexercise.com/"
         start_time = time.time()
         log_info(f"🌐 Loading {url}")
@@ -69,6 +50,7 @@ def test_navigate_to_test_cases(headless=True):
             log_warning("לא נמצאו מקרי בדיקה בעמוד!")
 
         accordion_headers = driver.find_elements(By.XPATH, "//*[@id='form']//h4/a")
+        total_cases = len(accordion_headers)
 
         for i, header in enumerate(accordion_headers, start=1):
             try:
@@ -79,6 +61,7 @@ def test_navigate_to_test_cases(headless=True):
                 header.click()
                 log_info(f"נפתח Test Case {i}: {header_text}")
 
+                # המתן לתוכן להופיע
                 content = WebDriverWait(driver, 5).until(
                     EC.visibility_of_element_located(
                         (By.XPATH, f"//*[@id='form']//div[@id='collapse{i}']")
@@ -86,8 +69,37 @@ def test_navigate_to_test_cases(headless=True):
                 )
 
                 if content.is_displayed():
+                    cases_with_content += 1
                     log_success(f"✅ התוכן מוצג עבור Test Case {i}")
-                    if header_text.lower() in content.text.lower():
+
+                    # 🔍 ספירת שורות הוראות
+                    content_text = content.text.strip()
+
+                    # ניסיון למצוא שורות ממוספרות (1. 2. 3. וכו')
+                    numbered_lines = [line for line in content_text.split('\n') if
+                                      line.strip() and any(line.strip().startswith(f"{num}.") for num in range(1, 100))]
+
+                    # אם לא נמצאו שורות ממוספרות, ספור שורות לא ריקות
+                    if not numbered_lines:
+                        instruction_lines = [line for line in content_text.split('\n') if line.strip()]
+                        line_count = len(instruction_lines)
+                    else:
+                        line_count = len(numbered_lines)
+
+                    if line_count > 0:
+                        cases_with_instructions += 1
+                        log_success(f"📝 Test Case {i} מכיל {line_count} שורות הוראות")
+
+                        # הצגת 3 השורות הראשונות (preview)
+                        preview_lines = content_text.split('\n')[:3]
+                        for idx, line in enumerate(preview_lines, 1):
+                            if line.strip():
+                                log_info(f"   שורה {idx}: {line.strip()[:80]}{'...' if len(line.strip()) > 80 else ''}")
+                    else:
+                        log_warning(f"⚠️ Test Case {i} לא מכיל הוראות ברורות")
+
+                    # בדיקת התאמה בין כותרת לתוכן
+                    if header_text.lower() in content_text.lower():
                         log_success(f"✅ הטקסט בתוכן תואם את הכותרת: '{header_text}'")
                     else:
                         log_warning(f"❌ הטקסט בתוכן לא תואם את הכותרת: '{header_text}'")
@@ -103,11 +115,25 @@ def test_navigate_to_test_cases(headless=True):
 
     finally:
         duration = time.time() - start_time
-        log_info(f"⏱️ משך הבדיקה: {duration:.2f} שניות")
-        driver.quit()
+
+        # סיכום מפורט
+        summary = (
+            f"\n{'=' * 60}\n"
+            f"📊 סיכום בדיקת Test Cases:\n"
+            f"{'=' * 60}\n"
+            f"🔢 סה״כ Test Cases: {total_cases}\n"
+            f"✅ Cases עם תוכן גלוי: {cases_with_content}\n"
+            f"📝 Cases עם הוראות: {cases_with_instructions}\n"
+            f"⏱️  משך הבדיקה: {duration:.2f} שניות\n"
+            f"{'=' * 60}\n"
+        )
+        log_info(summary)
+        print(Fore.CYAN + summary + Style.RESET_ALL)
+
         log_test_end(test_name, outcome)
 
 
 if __name__ == "__main__":
-    # ריצה ב-headless
-    test_navigate_to_test_cases(headless=True)
+    print("יש להריץ בדיקה זו באמצעות Pytest: pytest tests/test_navigation_to_test_cases.py")
+
+# --- סוף קובץ: tests/test_navigation_to_test_cases.py ---
