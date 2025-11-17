@@ -1,3 +1,4 @@
+# --- התחלה של קובץ: C:\Users\Owner\PycharmProjects\automationexercise_web_project\framework\actions.py ---
 
 import time
 import random
@@ -52,11 +53,11 @@ def hover_over_element(driver: WebDriver, element: WebElement):
 
 
 def remove_all_overlays(driver: WebDriver):
-    """מנסה להסיר מודאלים ו-overlays מהדף באמצעות JS."""
+    """מנסה להסיר מודאלים ו-overlays מהדף באמצעות JS (כולל פרסומות ו-iframes)."""
     try:
-        # שימוש ב-JS ישיר להסרה חזקה ויציבה של overlays.
+        # 💡 לוגיקה משופרת להסרת פרסומות ואלמנטים קופצים שאינם מנוקים
         js = """
-        let overlays = document.querySelectorAll('div[style*="position: fixed"], .overlay, .modal-backdrop');
+        let overlays = document.querySelectorAll('div[style*="position: fixed"], .overlay, .modal-backdrop, iframe[src*="google"], .google-auto-placed');
         overlays.forEach(o => o.remove());
         return overlays.length;
         """
@@ -122,3 +123,4 @@ def logout_if_logged_in(driver):
         log_info("Logged out user")
         time.sleep(1)
 
+# --- סוף קובץ: C:\Users\Owner\PycharmProjects\automationexercise_web_project\framework\actions.py ---

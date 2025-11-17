@@ -8,7 +8,7 @@
 #   uv pip install -r requirements.txt
 #
 # יצירת סביבה וירטואלית + התקנה:
-#   uv venv ; uv pip install -r requirements.txt
+#   כ
 #
 # הרצה ישירה בלי activation:
 #   uv run python run_tests.py

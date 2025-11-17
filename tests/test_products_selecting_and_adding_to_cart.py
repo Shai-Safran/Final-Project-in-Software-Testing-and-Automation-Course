@@ -32,6 +32,7 @@ def test_navigate_to_products(driver):
         remove_all_overlays(driver)
 
         products_link = wait_for_clickable(driver, By.XPATH, "//a[contains(text(),'Products')]")
+        driver.execute_script("window.scrollBy(0, 300)")  # גלילה בסיסית
         retry_on_stale(safe_click, driver, products_link)
 
         log_success("ניווט לעמוד Products הצליח")
@@ -51,6 +52,7 @@ def test_click_women_category(driver):
         remove_all_overlays(driver)
 
         women_menu = wait_for_clickable(driver, By.XPATH, "//a[@href='#Women']")
+        driver.execute_script("window.scrollBy(0, 300)")  # גלילה בסיסית
         retry_on_stale(safe_click, driver, women_menu)
 
         log_success("לחיצה על Women בוצעה בהצלחה")
@@ -93,9 +95,13 @@ def test_add_to_cart_in_details_page(driver):
         driver.get(PRODUCT_DETAILS_URL)
         remove_all_overlays(driver)
 
-        # 💡 תיקון: שימוש ב-XPath לפי תכונה (type='button') בתוך ה-Div הנכון
+        # 💡 תיקון: שימוש ב-XPath על בסיס האייקון <i> ובטקסט "Add to cart"
         add_to_cart_button = wait_for_clickable(driver, By.XPATH,
-                                                "//div[@class='product-information']/span/button[@type='button']")
+                                                "//button[contains(., 'Add to cart') and i[@class='fa fa-shopping-cart']]")
+
+        # 💡 גלילה מפורשת לפני לחיצה
+        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", add_to_cart_button)
+        time.sleep(0.5)
         retry_on_stale(safe_click, driver, add_to_cart_button)
 
         time.sleep(2)
@@ -116,13 +122,16 @@ def test_add_to_cart_via_popup(driver):
         driver.get(PRODUCTS_URL)
         remove_all_overlays(driver)
 
-        # כפתור זה קיים ברשימת המוצרים (אינדקס 1)
-        add_button = wait_for_clickable(driver, By.XPATH, "(//a[text()='Add to cart'])[1]")
+        # 💡 תיקון XPath: שימוש במזהה data-product-id='1' של המוצר הראשון
+        add_button = wait_for_clickable(driver, By.XPATH, "//a[@data-product-id='1']")
+
+        # 💡 גלילה מפורשת לפני לחיצה
+        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", add_button)
         retry_on_stale(safe_click, driver, add_button)
 
         time.sleep(2)
 
-        # 💡 ודא שהאלמנט מוכן
+        # לחיצה על View Cart ב-popup
         popup_view_cart = wait_for_clickable(driver, By.XPATH,
                                              "//div[contains(@class, 'modal-content')]//a[@href='/view_cart']")
         retry_on_stale(safe_click, driver, popup_view_cart)
@@ -151,7 +160,7 @@ def test_verify_cart_item_and_price(driver):
         driver.get(PRODUCTS_URL)
         remove_all_overlays(driver)
 
-        product_name_element = driver.find_element(By.XPATH, "(//div[@class='productinfo text-center']/p)[1]")
+        product_name_element = wait_for_clickable(driver, By.XPATH, "(//div[@class='productinfo text-center']/p)[1]")
         product_name = product_name_element.text
 
         product_price_element = driver.find_element(By.XPATH, "(//div[@class='productinfo text-center']/h2)[1]")

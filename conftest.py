@@ -3,7 +3,8 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager  # ✅ החזרת webdriver_manager
+# ❌ הסרת webdriver_manager (הספרייה החסרה)
+# from webdriver_manager.chrome import ChromeDriverManager
 from framework.logger import log_info, log_error
 import pytest
 import os
@@ -49,20 +50,18 @@ def driver(request):
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-software-rasterizer")
-    chrome_options.add_argument("--remote-debugging-port=9222")
+    chrome_options.add_argument("--remote-debugging-port=0")
     chrome_options.add_argument("--remote-allow-origins=*")
     chrome_options.add_argument("--disable-features=RendererCodeIntegrity")
     chrome_options.add_argument("--disable-site-isolation-trials")
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
     try:
-        # ✅ שינוי קריטי: חזרה ל-ChromeDriverManager
+        # ✅ שינוי קריטי: שימוש ב-Service() ריק (מפעיל את Selenium Manager)
         service = Service(
-            ChromeDriverManager().install(),
-            # 💡 תיקון Timeout: הגדרת command-timeout ב-Service Arguments
-            service_args=["--verbose", f"--command-timeout={COMMAND_TIMEOUT_SECONDS}"],
-            # 💡 תיקון Timeout: הגדרת timeout ישירות ב-Service (300 שניות)
+            # אין צורך ב-executable_path=
             timeout=COMMAND_TIMEOUT_SECONDS
+            # service_args נשאר ריק כיוון שה-command-timeout יועבר כארגומנט ל-Service
         )
 
         driver = webdriver.Chrome(

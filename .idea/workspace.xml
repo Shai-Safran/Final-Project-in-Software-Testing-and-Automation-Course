@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="619e73b2-096c-4c06-b9e4-07be80a00439" name="Changes" comment="עדכונים למבחנים לקיצור ריצות&#10;הוספת סקריפט להרצת כל המבחנים run_tests.py &#10;בתוספת הגדרות : HEADLESS=TRUE/FALSE&#10;PARRLLEL=TRUE/FALSE&#10;הוספת readme&#10;מעבר לעבודה עם UV&#10;עדכון requirements.txt" />
+    <list default="true" id="619e73b2-096c-4c06-b9e4-07be80a00439" name="Changes" comment="פתיחה אוטמטית של הדו&quot;ח המסכם בסוף ריצה">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/framework/actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_products_selecting_and_adding_to_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_products_selecting_and_adding_to_cart.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,7 +167,31 @@
       <option name="project" value="LOCAL‎" />
       <updated>1763245033841</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎-00007" summary="עדכונים למבחנים לקיצור ריצות&#10;הוספת סקריפט להרצת כל המבחנים run_tests.py &#10;בתוספת הגדרות : HEADLESS=TRUE/FALSE&#10;PARRLLEL=TRUE/FALSE&#10;הוספת readme&#10;מעבר לעבודה עם UV&#10;עדכון requirements.txt&#10;מעבר ל Selenium Manager">
+      <option name="closed" value="true" />
+      <created>1763245392528</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL‎-00007" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1763245392528</updated>
+    </task>
+    <task id="LOCAL‎-00008" summary="פתיחה אוטמטית של הדו&quot;ח המסכם בסוף ריצה">
+      <option name="closed" value="true" />
+      <created>1763392996875</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1763392996875</updated>
+    </task>
+    <task id="LOCAL‎-00009" summary="פתיחה אוטמטית של הדו&quot;ח המסכם בסוף ריצה">
+      <option name="closed" value="true" />
+      <created>1763395583300</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1763395583300</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -169,6 +199,16 @@
     <MESSAGE value="שיפור הצגת ההרצה" />
     <MESSAGE value="עדכונים ושינוי שמות" />
     <MESSAGE value="עדכונים למבחנים לקיצור ריצות&#10;הוספת סקריפט להרצת כל המבחנים run_tests.py &#10;בתוספת הגדרות : HEADLESS=TRUE/FALSE&#10;PARRLLEL=TRUE/FALSE&#10;הוספת readme&#10;מעבר לעבודה עם UV&#10;עדכון requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="עדכונים למבחנים לקיצור ריצות&#10;הוספת סקריפט להרצת כל המבחנים run_tests.py &#10;בתוספת הגדרות : HEADLESS=TRUE/FALSE&#10;PARRLLEL=TRUE/FALSE&#10;הוספת readme&#10;מעבר לעבודה עם UV&#10;עדכון requirements.txt" />
+    <MESSAGE value="עדכונים למבחנים לקיצור ריצות&#10;הוספת סקריפט להרצת כל המבחנים run_tests.py &#10;בתוספת הגדרות : HEADLESS=TRUE/FALSE&#10;PARRLLEL=TRUE/FALSE&#10;הוספת readme&#10;מעבר לעבודה עם UV&#10;עדכון requirements.txt&#10;מעבר ל Selenium Manager" />
+    <MESSAGE value="פתיחה אוטמטית של הדו&quot;ח המסכם בסוף ריצה" />
+    <option name="LAST_COMMIT_MESSAGE" value="פתיחה אוטמטית של הדו&quot;ח המסכם בסוף ריצה" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
