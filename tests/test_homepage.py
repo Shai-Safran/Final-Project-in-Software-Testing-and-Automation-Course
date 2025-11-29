@@ -1,5 +1,3 @@
-# --- התחלה של קובץ: tests/test_homepage.py ---
-
 import time
 import threading
 import sys
