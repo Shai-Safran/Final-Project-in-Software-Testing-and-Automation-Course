@@ -1,10 +1,6 @@
-# --- התחלה של קובץ: conftest.py ---
-
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-# ❌ הסרת webdriver_manager (הספרייה החסרה)
-# from webdriver_manager.chrome import ChromeDriverManager
 from framework.logger import log_info, log_error
 import pytest
 import os
@@ -80,4 +76,3 @@ def driver(request):
         if 'driver' in locals() and driver:
             driver.quit()
 
-# --- סוף קובץ: conftest.py ---
