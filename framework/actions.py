@@ -1,5 +1,3 @@
-# --- התחלה של קובץ: C:\Users\Owner\PycharmProjects\automationexercise_web_project\framework\actions.py ---
-
 import time
 import random
 from selenium.webdriver.remote.webdriver import WebDriver
@@ -122,5 +120,3 @@ def logout_if_logged_in(driver):
         safe_click(driver, logout_link)
         log_info("Logged out user")
         time.sleep(1)
-
-# --- סוף קובץ: C:\Users\Owner\PycharmProjects\automationexercise_web_project\framework\actions.py ---
