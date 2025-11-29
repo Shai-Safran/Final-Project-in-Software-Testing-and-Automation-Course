@@ -1,8 +1,4 @@
-אני מתנצל על אי הנוחות. הנה התוכן המלא של הקובץ `README.md` בבלוק קוד יחיד, מוכן להעתקה ישירה לקובץ טקסט או Markdown.
 
------
-
-```markdown
 # 🌐 Automation Exercise Web Project - Selenium & Pytest Framework
 
 פרויקט זה מכיל אוטומציה של בדיקות אינטרנט (UI) עבור אתר **Automation Exercise**, שנבנה באמצעות **Python**, ספריית **Selenium WebDriver** ומסגרת הבדיקות **Pytest**. המטרה היא לוודא את תקינות הפונקציונליות הקריטית באתר, תוך שימוש בארכיטקטורה מופרדת (Framework) המבטיחה קריאות, שימוש חוזר בקוד וקלות תחזוקה.
