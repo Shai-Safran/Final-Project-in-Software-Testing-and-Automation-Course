@@ -1,5 +1,3 @@
-# --- התחלה של קובץ: tests/test_navigation_to_test_cases.py ---
-
 import logging
 import time
 from colorama import Fore, Style, init
@@ -135,5 +133,3 @@ def test_navigate_to_test_cases(driver):
 
 if __name__ == "__main__":
     print("יש להריץ בדיקה זו באמצעות Pytest: pytest tests/test_navigation_to_test_cases.py")
-
-# --- סוף קובץ: tests/test_navigation_to_test_cases.py ---
